@@ -3,7 +3,6 @@ const { createLogger } = require("redux-logger");
 
 const videoReducer = require("../features/videosSlice")
 
-
 const logger = createLogger();
 
 const store = configureStore({
@@ -11,7 +10,7 @@ const store = configureStore({
         video : videoReducer
     },
     middleware : (getDefaultMiddlewares) => {
-        return getDefaultMiddlewares().concat(logger);
+        return getDefaultMiddlewares();
     }
 })
 

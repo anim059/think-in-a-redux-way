@@ -1,9 +1,14 @@
 const store = require("./app/store");
 
-const fetchVideos = require("./features/videosSlice");
+const {fetchVideos} = require("./features/videosSlice");
+const {fetchRelatedVideos} = require("./features/videosSlice");
+
+
 
 store.subscribe(()=>{
-    console.log(store.getState());
+    console.log(store.getState().video.videos);
 })
 
-store.dispatch(fetchVideos);
+store.dispatch(fetchVideos());
+// console.log("stores",store.getState());
+// store.dispatch(fetchRelatedVideos('react'));
